@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: hsl(275, 100%, 97%);
+    font-family: "Work Sans", sans-serif;
+}
+.container {
+    background: url('../assets/images/background-pattern-desktop.svg') no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 30dvh;
+}
+main {
+    min-height: 100dvh;
+}
+.container-bx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header {
+    display: flex;
+    margin:10px 0px 10px 0px;
+}
+.header h1 {
+    margin-left: 10px;
+}
+.box {
+    background: #fff;
+    margin-top: -50px;
+    width: 600px;
+    border-radius: 10px;
+    padding: 30px;
+}
+.faq .question {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    position: relative;
+}
+.question p {
+    font-size: 15px;
+    font-weight: 700;
+    color: hsl(292, 42%, 14%);
+    cursor: pointer;
+}
+.question p:hover{
+    color:purple;
+}
+.question::before {
+    content: url(../assets/images/icon-plus.svg);
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+}
+.faq .question img {
+    width: 20px;
+}
+.faq .answer {
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 15px;
+    transition: .5s;
+
+}
+.answer small {
+    font-size: 16px;
+    font-weight: 400;
+    color:hsl(292, 16%, 49%);
+    line-height: 25px;
+}
+.faq.active .answer {
+    max-height: 100px;
+    border-bottom: 2px solid hsl(275, 100%, 97%);
+    padding-bottom: 20px;
+}
+.faq.active .question::before {
+    content: url(../assets/images/icon-minus.svg);
+}
+
+@media only screen and (max-width: 500px) {
+    .box {
+        width: 350px;
+    }
+    .question p {
+        font-size: 15px;
+        width: 250px;
+        font-weight: 600;
+    }
+    .answer small {
+        font-size: 11px;
+        line-height: 20px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+}
